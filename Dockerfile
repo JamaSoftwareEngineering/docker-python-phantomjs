@@ -30,26 +30,7 @@ RUN git clone https://github.com/ariya/phantomjs.git /tmp/phantomjs && \
   ./build.sh --jobs 1 --confirm && mv bin/phantomjs /usr/local/bin && \
   rm -rf /tmp/phantomjs
 
-# leave libfreetype6
-RUN apt-get purge -y \
-    git \
-    build-essential \
-    g++ \
-    flex \
-    bison \
-    gperf \
-    ruby \
-    perl \
-    libsqlite3-dev \
-    libfontconfig1-dev \
-    libicu-dev \
-    libssl-dev \
-    libpng-dev \
-    libjpeg-dev \
-    libqt5webkit5-dev
-
 # end of PhantomJS build 
 
-RUN apt-get autoremove -y
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
