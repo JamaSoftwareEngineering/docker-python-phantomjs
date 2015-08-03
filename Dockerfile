@@ -31,7 +31,7 @@ RUN git clone https://github.com/ariya/phantomjs.git /tmp/phantomjs && \
   rm -rf /tmp/phantomjs
 
 # leave libfreetype6
-RUN apt-get purge \
+RUN apt-get purge -y \
     git \
     build-essential \
     g++ \
@@ -50,6 +50,6 @@ RUN apt-get purge \
 
 # end of PhantomJS build 
 
-RUN apt-get autoremove
+RUN apt-get autoremove -y
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
