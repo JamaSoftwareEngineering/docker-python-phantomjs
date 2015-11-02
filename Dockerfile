@@ -14,4 +14,4 @@ RUN apt-get update \
 
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-RUN pip install -U pip
+RUN pip install -U pip==7.1.2
